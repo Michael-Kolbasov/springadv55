@@ -1,0 +1,10 @@
+package com.epam.kolbasov.springadv.repository
+
+import com.epam.kolbasov.springadv.model.User
+import org.springframework.data.repository.CrudRepository
+import org.springframework.stereotype.Repository
+
+@Repository
+interface UserRepository extends CrudRepository<User, Long> {
+
+}

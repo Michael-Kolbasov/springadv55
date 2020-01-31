@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON registration page</title>
+    <script type ="text/javascript">
+        function postData(data){
+            let jsonData = JSON.stringify(document.getElementById(data).value);
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "/json");
+            xhr.send(jsonData);
+        }
+    </script>
+</head>
+<body>
+
+<h2>Enter your json here. Companies and telephones are mandatory and will be mapped on each other index-based, users are optional.</h2>
+
+{{#message}}
+    {{.}}
+{{/message}}
+
+<form action="/json" method="post">
+    <label>
+        <textarea name="data" id="data" cols="100" rows="30">
+{
+    "companies": [
+        {
+            "name": "123"
+        },
+        {
+            "name": "234"
+        }
+    ],
+    "telephones": [
+        {
+            "number": "2222",
+            "free": false
+        },
+        {
+            "number": "3333",
+            "free": true
+        }
+    ],
+    "users": [
+        {
+            "name": "Vasiliy"
+        }
+    ]
+}
+        </textarea>
+    </label>
+    <input type="submit" onclick="postData('data')">
+</form>
+</body>
+</html>

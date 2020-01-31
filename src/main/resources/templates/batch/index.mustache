@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Batch loading</title>
+</head>
+<body>
+
+<h2>Hi! Here you can download the template to batch load the phone stuff or register your own template.</h2>
+
+{{#message}}
+    {{.}}<br><br>
+{{/message}}
+
+<a href="/batch/download">Download template</a><br><br>
+
+Submit template
+<form action="/batch" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" content="Select file"><br>
+    <input type="submit" content="Submit">
+</form>
+
+</body>
+</html>
